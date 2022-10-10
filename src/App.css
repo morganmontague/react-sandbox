@@ -11,7 +11,13 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+  /* #root {
+    animation: root-spin infinite 20s linear;
+  } */
+  /* .MyBut {
+    animation: MyBut-spin infinite 2s linear; */
+  }
+
 
 .App-header {
   background-color: blueviolet;
@@ -34,5 +40,23 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes MyBut-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes root-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }

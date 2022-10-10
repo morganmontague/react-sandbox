@@ -3,6 +3,12 @@ import './App.css';
 
 import { useState } from 'react';
 
+function TestaddComponant() {
+  return (
+    <p> testing</p>
+  )
+}
+
 
 const games = [
     { title: 'Halo', xboxExclusive: true, id: 1 },
@@ -97,23 +103,37 @@ const PRODUCTS = [
 ];
 
 
-function MyButton({ count, onClick }) {
 
-  return (
-    <button onClick={onClick}>
-      Click Me to See a Change in State
-    </button>
-  );
-}
+
+
 
 function App() {
- 
-    const [count, setCount] = useState(0);
-
+  function CounterParagrapgh() {
+    
+    return (
+      <p> 
+        The button has been clicked {count}
+      </p>
+    )
+  }
+  
+  const [count, setCount] = useState(0);
+  
   function handleClick() {
     setCount(count + 1);
   }
-
+  
+  function MyButton({ count, onClick }) {
+    
+    return (
+      <>
+      <button onClick={onClick} className='MyBut'>
+        Click Me to See a Change in State
+      </button>
+      <CounterParagrapgh count={count} />
+      </>
+    );
+  }
   console.log('test for console logging')
   const listItems = games.map(game =>
     <li
@@ -134,8 +154,10 @@ function App() {
           Edit <code>Checking out stuff</code> and save to reload.
         </p>
         <FilterableProductTable products={PRODUCTS} />
+        <br />
         <MyButton count = {count} onClick={handleClick} />
-        <p> The button has been clicked {count}</p>
+        
+        < TestaddComponant />
         <a
           className="App-link"
           href="https://reactjs.org"
